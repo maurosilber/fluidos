@@ -1,0 +1,3 @@
+[submodule "GHOST"]
+	path = GHOST
+	url = https://github.com/pmininni/GHOST
