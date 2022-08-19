@@ -1,0 +1,7 @@
+name: fluidos
+channels:
+  - conda-forge
+dependencies:
+  - fortran-compiler
+  - fftw
+  - openmpi
