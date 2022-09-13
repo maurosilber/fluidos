@@ -1,21 +1,21 @@
 ! General configuration flags
 &status
-idir = "/ptmp/run"
-odir = "/ptmp/run"
+idir = "./out"
+odir = "./out"
 stat = 0         ! last binary file if restarting an old run
 mult = 1         ! decreases the time step
 bench = 0        ! benchmark mode if 1
-outs = 0         ! controls the amount of output
+outs = 1         ! controls the amount of output
 mean = 0         ! computes mean fields if 1
 trans = 1        ! computes energy transfer if 1
 /
 
 ! Parameters for time integration
 &parameter
-dt = 7.5e-4      ! time step
-step = 12001     ! total number of steps
-tstep = 500      ! number of steps between binary output
-sstep = 250      ! number of steps between spectrum output
+dt = 5.e-3        ! time step
+step = 1201     ! total number of steps
+tstep = 50      ! number of steps between binary output
+sstep = 25      ! number of steps between spectrum output
 cstep = 10       ! number of steps between writing global quantities
 rand = 1         ! random phases if 1
 cort = 7.5e-4    ! correlation time of the external forcing
@@ -31,11 +31,11 @@ Lz = 3.00        ! Length of the box in z
 
 ! Parameters for the velocity field
 &velocity
-f0 = 0.37714265  ! amplitude of the mechanical forcing
+f0 = 0.  ! amplitude of the mechanical forcing
 u0 = 1.00        ! amplitude of the initial velocity field
-kdn = 2.00       ! minimum wavenumber
-kup = 2.00       ! maximum wavenumber
-nu = 3.e-4       ! kinematic viscosity
+kdn = 5.00       ! minimum wavenumber
+kup = 5.00       ! maximum wavenumber
+nu = 3.e-3       ! kinematic viscosity
 fparam0 = 0.90   ! fparam0-9 can be used to control the forcing
 vparam0 = 0.10   ! idem for the initial velocity field
 /
