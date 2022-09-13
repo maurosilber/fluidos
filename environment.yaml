@@ -5,3 +5,9 @@ dependencies:
   - fortran-compiler
   - fftw
   - openmpi
+  - python
+  - ipykernel
+  - ipywidgets
+  - numpy
+  - matplotlib
+  - numba
