@@ -1,0 +1,10 @@
+name: fluidos
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - ipykernel
+  - ipywidgets
+  - numpy
+  - matplotlib
+  - numba
