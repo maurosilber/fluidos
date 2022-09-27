@@ -13,7 +13,7 @@ trans = 1        ! computes energy transfer if 1
 ! Parameters for time integration
 &parameter
 dt = 5.e-3        ! time step
-step = 200     ! total number of steps
+step = 201     ! total number of steps
 tstep = 10      ! number of steps between binary output
 sstep = 10      ! number of steps between spectrum output
 cstep = 10       ! number of steps between writing global quantities
