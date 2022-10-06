@@ -1,7 +1,7 @@
 ! General configuration flags
 &status
-idir = "/ptmp/run"
-odir = "/ptmp/run"
+idir = "."
+odir = "."
 stat = 0         ! last binary file if restarting an old run
 mult = 1         ! decreases the time step
 bench = 0        ! benchmark mode if 1
