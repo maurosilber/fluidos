@@ -12,10 +12,10 @@ trans = 1        ! computes energy transfer if 1
 
 ! Parameters for time integration
 &parameter
-dt = 7.5e-4      ! time step
-step = 12001     ! total number of steps
-tstep = 500      ! number of steps between binary output
-sstep = 250      ! number of steps between spectrum output
+dt = 5.0e-3      ! time step
+step = 2001     ! total number of steps
+tstep = 100      ! number of steps between binary output
+sstep = 2001      ! number of steps between spectrum output
 cstep = 10       ! number of steps between writing global quantities
 rand = 1         ! random phases if 1
 cort = 7.5e-4    ! correlation time of the external forcing
@@ -26,7 +26,7 @@ seed = 1000      ! seed for the random number generator
 &boxparams
 Lx = 2.00        ! Length of the box in x
 Ly = 1.00        ! Length of the box in y
-Lz = 3.00        ! Length of the box in z
+Lz = 1.00        ! Length of the box in z
 /
 
 ! Parameters for the velocity field
@@ -35,9 +35,10 @@ f0 = 0.37714265  ! amplitude of the mechanical forcing
 u0 = 1.00        ! amplitude of the initial velocity field
 kdn = 2.00       ! minimum wavenumber
 kup = 2.00       ! maximum wavenumber
-nu = 3.e-4       ! kinematic viscosity
+nu = 2.0e-3      ! kinematic viscosity
 fparam0 = 0.90   ! fparam0-9 can be used to control the forcing
-vparam0 = 0.10   ! idem for the initial velocity field
+vparam0 = {gamma} ! slope of the tanh profile
+vparam1 = {u1}   ! amplitude of the noise
 /
 
 ! Parameters for the magnetic field (MHD, HMHD solvers)
@@ -54,7 +55,7 @@ aparam0 = 0.10   ! idem for the initial magnetic field
 
 ! Parameters for the Boussinesq solvers (BOUSS, ROTBOUSS solvers)
 &boussinesq
-bvfreq = 0.10    ! Brunt-Vaisala frequency (positive definite)
+bvfreq = {bvfreq}    ! Brunt-Vaisala frequency (positive definite)
 xmom = 1.00      ! multiplies bouyancy term in momentum equation
 xtemp = 1.00     ! multiplies temperature-current term in scalar eq.
 /
@@ -65,7 +66,7 @@ c0 = 0.00        ! amplitude of the initial concentration
 s0 = 1.00        ! amplitude of the scalar source
 skdn = 1.00      ! minimum wavenumber
 skup = 2.00      ! maximum wavenumber
-kappa = 2.e-3    ! diffusivity
+kappa = 2.0e-3    ! diffusivity
 sparam0 = 0.90   ! cparam0-9 can be used to control the source
 cparam0 = 0.10   ! idem for the initial concentration
 / 
