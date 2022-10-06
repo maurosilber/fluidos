@@ -1,0 +1,320 @@
+Output for this solver includes the following files:
+(note some output files may not be created, depending
+on specific solver and options being used).
+
+From subroutines in pseudospec3D_mod.f90 (see file for more details):
+
+From subroutines in module_dns.f90 (see file for more details):
+
+From subroutines in pseudospec3D_hd.f90 (see file for more details):
+! Output files contain:
+! 'balance.txt':  time, <v^2>, <omega^2>, mechanic injection rate
+! 'helicity.txt': time, kinetic helicity
+! 'divergence.txt' [OPTIONAL]: time, <(div.v)^2>
+!
+
+! Output files contain:
+! 'kspectrum.XXX.txt': k, Ev(k)
+! 'mspectrum.XXX.txt': k, Eb(k)
+! 'khelicity.XXX.txt': k, Hv(k) (kinetic helicity spectrum)
+! 'mhelicity.XXX.txt': k, Hb(k) (magnetic helicity spectrum)
+! 'ghelicity.XXX.txt': k, G(k)  (generalized helicity in Hall-MHD)
+!
+
+! Output files contain:
+! 'Pspec1dIJ.XXX.txt' [I=x,y,z (field component)][J=x,y,z (dir)]
+!     [P=prefix: 'k' for kinetic energy, 'm' for magnetic, etc.]:
+!     k_dir, E_comp(k_dir)
+!
+
+! Output files contain:
+! 'ktransfer.XXX.txt': k, Tv(k) (kinetic energy transfer function)
+! 'mtransfer.XXX.txt': k, Tb(k) (magnetic energy transfer)
+! 'jtransfer.XXX.txt': k, Tj(k) (Lorentz force work)
+! 'kcrostran.XXX.txt': k, TC_v(k) (kinetic cross-helicity transfer)
+! 'mcrostran.XXX.txt': k, TC_b(k) (magnetic cross-helicity transfer)
+!
+
+! Output files contain:
+! 'hktransfer.XXX.txt': k, TH_v(k) (transfer of kinetic helicity)
+! 'hmtransfer.XXX.txt': k, TH_b(k) (transfer of magnetic helicity)
+!
+
+
+From subroutines in pseudospec3D_phd.f90 (see file for more details):
+! Output files contain:
+! 'sspectrum.XXX.txt' : k, V(k) (power spectrum of the scalar)
+! 'sNspectrum.XXX.txt': k, V(k) (same for the N-th scalar)
+!
+
+! Output files contain:
+! 'stransfer.XXX.txt' : k, Ts(k) (scalar transfer function)
+! 'sNtransfer.XXX.txt': k, Ts(k) (same for the N-th scalar)
+!
+
+
+From subroutines in pseudospec3D_rot.f90 (see file for more details):
+! Output files contain:
+! 'kspecpara.XXX.txt': kz, Ev(kz), Ev_perp(kz), Ev_z(kz)
+!   [Ev: kinetic energy; Ev_perp: energy in vx,vy; Ev_z: same in vz]        
+! 'mspecpara.XXX.txt': kz, Eb(kz), Eb_perp(kz), Eb_z(kz)
+! 'khelipara.XXX.txt': kz, Hv(kz), Hv_perp(kz), Hv_z(kz)
+!   [Hv: kinetic helicity; Hv_perp: v_perp.w_perp, Hv_z: vz.wz]
+! 'mhelipara.XXX.txt': kz, Hb(kz), Hb_perp(kz), Hb_z(kz)
+! 'ghelipara.XXX.txt': kz, G(kz)  ,G_perp(kz) , G_z(kz) 
+!   [Generalized helicity in Hall-MHD]
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'kspecperp.XXX.txt': kp, E_v(kp), ev_x,y(kp,kz=0), ev_z(kp,kz=0)
+!   [E_v: kin. ener.; ev_x,y: 2D spec. for vx,vy; ev_z: same for vz]
+! 'mspecperp.XXX.txt': kp, E_b(kp), eb_x,y(kp,kz=0), eb_z(kp,kz=0)
+! 'kheliperp.XXX.txt': kp, H_v(kp), hv_x,y(kp,kz=0), hv_z(kp,kz=0)
+! 'mheliperp.XXX.txt': kp, H_b(kp), hb_x,y(kp,kz=0), hb_z(kp,kz=0)
+! 'gheliperp.XXX.txt': kp, G(kz),   g(kp,kz=0),      g(kp,kz=0)
+!
+
+! Output files contain:
+! 'ktranpara.XXX.txt': kz, Tv(kz) (kinetic energy transfer function)
+! 'mtranpara.XXX.txt': kz, Tb(kz) (magnetic energy transfer)
+! 'jtranpara.XXX.txt': kz, Hj(kz) (Lorentz force work)
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'ktranperp.XXX.txt': kp, Tv(kp) (kinetic energy transfer function)
+! 'mtranperp.XXX.txt': kp, Tb(kp) (magnetic energy transfer)
+! 'jtranperp.XXX.txt': kp, Hj(kp) (Lorentz force work)
+!
+
+! Output files contain:
+! 'hktranpara.XXX.txt': kz, TH_v(kz) (kinetic helicity transfer)
+! 'hmtranpara.XXX.txt': kz, TH_b(kz) (magnetic helicity transfer)
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'hktranperp.XXX.txt': kp, TH_v(kp) (kinetic helicity transfer)
+! 'hmtranperp.XXX.txt': kp, TH_b(kp) (magnetic helicity transfer)
+!
+
+! Output files contain:
+! 'odir/kspec2D.XXX.out': kinetic energy 2D spectrum ev(kperp,kpara)
+! 'odir/mspec2D.XXX.out': magnetic energy spectrum   eb(kperp,kpara)
+! 'odir/kheli2D.XXX.out': kinetic helicity spectrum  hv(kperp,kpara)
+! 'odir/mheli2D.XXX.out': magnetic helicity spectrum hv(kperp,kpara)
+! 'odir/gheli2D.XXX.out': generalized helicity spec. g(kperp,kpara)
+!        
+
+! Output files contain [field = vx,vy,...]:
+! 'odir/field_kx': field(kz,ky,kx=0) with size (nz,ny)
+! 'odir/field_ky': field(kz,ky=0,kx) with size (nz,nx/2+1)
+! 'odir/field_kz': field(kz=0,ky,kx) with size (ny,nx/2+1)
+!   [Wavenumbers are k_i=(0,1,...)/L_i (i=x,y,z)]
+!
+
+
+From subroutines in pseudospec3D_prot.f90 (see file for more details):
+! Output files contain:
+! 'sspecpara.XXX.txt' : kz, V(kz) (power spectrum of the scalar)
+! 'sNspecpara.XXX.txt': kz, V(kz) (same for the N-th scalar)
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'sspecperp.XXX.txt' : kp, V(kp), v(kp,kz=0)
+! 'sNspecperp.XXX.txt': kp, V(kp), v(kp,kz=0) (for the N-th scalar)
+!
+   
+! Output files contain:
+! 'stranpara.XXX.txt' : kz, Ts(kz) (scalar transfer function)
+! 'sNtranpara.XXX.txt': kz, Ts(kz) (same for the N-th scalar)
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'stranperp.XXX.txt' : kp, Ts(kp) (scalar transfer function)
+! 'sNtranperp.XXX.txt': kp, Ts(kp) (same for the N-th scalar)
+!
+
+! Output files contain:
+! 'odir/sspec2D.XXX.out' : 2D spectrum v(kperp,kpara)
+! 'odir/sNspec2D.XXX.out': Same for the N-th scalar
+!
+
+
+From subroutines in pseudospec3D_bouss.f90 (see file for more details):
+! Output files contain:
+! 'tboussavg.txt': time, vol. average of quantities described below
+! 'tboussmax.txt': time, max. val. of quantities described below
+! 'tboussmin.txt': time, min. val. of quantities described below
+!    col== 2 : hor. avg. of shear == <du_perp/dz>^2
+!    col== 3 : hor. avg. of vert. temp. gradient == <d\theta/dz>
+!    col== 4 : hor. avg. of correlation == <u_z d\theta/dz>
+!    col== 5 : hor. avg. of hor. kinetic energy == <u^2 + v^2>
+!    col== 6 : hor. avg. of vert. kinetic energy == <w^2>
+!    col== 7 : hor. avg. of perp. helicity == <u_perp.(curl u)_perp>_perp
+!    col== 8 : hor. avg. of correlation: <\omega_z \theta>
+!    col== 9 : hor. avg. of PV^2 (see 'havgcomp')
+!    col== 10: hor. avg. of 'super-helicity': <\omega . curl \omega>_perp
+!    col== 11: hor. avg. of gradient Richardson no. (see 'havgcomp')
+!    col== 12: hor. avg. of correlation: <u_z \theta>
+!        
+
+
+Output for this solver includes the following files:
+(note some output files may not be created, depending
+on specific solver and options being used).
+
+From subroutines in pseudospec3D_mod.f90 (see file for more details):
+
+From subroutines in module_dns.f90 (see file for more details):
+
+From subroutines in pseudospec3D_hd.f90 (see file for more details):
+! Output files contain:
+! 'balance.txt':  time, <v^2>, <omega^2>, mechanic injection rate
+! 'helicity.txt': time, kinetic helicity
+! 'divergence.txt' [OPTIONAL]: time, <(div.v)^2>
+!
+
+! Output files contain:
+! 'kspectrum.XXX.txt': k, Ev(k)
+! 'mspectrum.XXX.txt': k, Eb(k)
+! 'khelicity.XXX.txt': k, Hv(k) (kinetic helicity spectrum)
+! 'mhelicity.XXX.txt': k, Hb(k) (magnetic helicity spectrum)
+! 'ghelicity.XXX.txt': k, G(k)  (generalized helicity in Hall-MHD)
+!
+
+! Output files contain:
+! 'Pspec1dIJ.XXX.txt' [I=x,y,z (field component)][J=x,y,z (dir)]
+!     [P=prefix: 'k' for kinetic energy, 'm' for magnetic, etc.]:
+!     k_dir, E_comp(k_dir)
+!
+
+! Output files contain:
+! 'ktransfer.XXX.txt': k, Tv(k) (kinetic energy transfer function)
+! 'mtransfer.XXX.txt': k, Tb(k) (magnetic energy transfer)
+! 'jtransfer.XXX.txt': k, Tj(k) (Lorentz force work)
+! 'kcrostran.XXX.txt': k, TC_v(k) (kinetic cross-helicity transfer)
+! 'mcrostran.XXX.txt': k, TC_b(k) (magnetic cross-helicity transfer)
+!
+
+! Output files contain:
+! 'hktransfer.XXX.txt': k, TH_v(k) (transfer of kinetic helicity)
+! 'hmtransfer.XXX.txt': k, TH_b(k) (transfer of magnetic helicity)
+!
+
+
+From subroutines in pseudospec3D_phd.f90 (see file for more details):
+! Output files contain:
+! 'sspectrum.XXX.txt' : k, V(k) (power spectrum of the scalar)
+! 'sNspectrum.XXX.txt': k, V(k) (same for the N-th scalar)
+!
+
+! Output files contain:
+! 'stransfer.XXX.txt' : k, Ts(k) (scalar transfer function)
+! 'sNtransfer.XXX.txt': k, Ts(k) (same for the N-th scalar)
+!
+
+
+From subroutines in pseudospec3D_rot.f90 (see file for more details):
+! Output files contain:
+! 'kspecpara.XXX.txt': kz, Ev(kz), Ev_perp(kz), Ev_z(kz)
+!   [Ev: kinetic energy; Ev_perp: energy in vx,vy; Ev_z: same in vz]        
+! 'mspecpara.XXX.txt': kz, Eb(kz), Eb_perp(kz), Eb_z(kz)
+! 'khelipara.XXX.txt': kz, Hv(kz), Hv_perp(kz), Hv_z(kz)
+!   [Hv: kinetic helicity; Hv_perp: v_perp.w_perp, Hv_z: vz.wz]
+! 'mhelipara.XXX.txt': kz, Hb(kz), Hb_perp(kz), Hb_z(kz)
+! 'ghelipara.XXX.txt': kz, G(kz)  ,G_perp(kz) , G_z(kz) 
+!   [Generalized helicity in Hall-MHD]
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'kspecperp.XXX.txt': kp, E_v(kp), ev_x,y(kp,kz=0), ev_z(kp,kz=0)
+!   [E_v: kin. ener.; ev_x,y: 2D spec. for vx,vy; ev_z: same for vz]
+! 'mspecperp.XXX.txt': kp, E_b(kp), eb_x,y(kp,kz=0), eb_z(kp,kz=0)
+! 'kheliperp.XXX.txt': kp, H_v(kp), hv_x,y(kp,kz=0), hv_z(kp,kz=0)
+! 'mheliperp.XXX.txt': kp, H_b(kp), hb_x,y(kp,kz=0), hb_z(kp,kz=0)
+! 'gheliperp.XXX.txt': kp, G(kz),   g(kp,kz=0),      g(kp,kz=0)
+!
+
+! Output files contain:
+! 'ktranpara.XXX.txt': kz, Tv(kz) (kinetic energy transfer function)
+! 'mtranpara.XXX.txt': kz, Tb(kz) (magnetic energy transfer)
+! 'jtranpara.XXX.txt': kz, Hj(kz) (Lorentz force work)
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'ktranperp.XXX.txt': kp, Tv(kp) (kinetic energy transfer function)
+! 'mtranperp.XXX.txt': kp, Tb(kp) (magnetic energy transfer)
+! 'jtranperp.XXX.txt': kp, Hj(kp) (Lorentz force work)
+!
+
+! Output files contain:
+! 'hktranpara.XXX.txt': kz, TH_v(kz) (kinetic helicity transfer)
+! 'hmtranpara.XXX.txt': kz, TH_b(kz) (magnetic helicity transfer)
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'hktranperp.XXX.txt': kp, TH_v(kp) (kinetic helicity transfer)
+! 'hmtranperp.XXX.txt': kp, TH_b(kp) (magnetic helicity transfer)
+!
+
+! Output files contain:
+! 'odir/kspec2D.XXX.out': kinetic energy 2D spectrum ev(kperp,kpara)
+! 'odir/mspec2D.XXX.out': magnetic energy spectrum   eb(kperp,kpara)
+! 'odir/kheli2D.XXX.out': kinetic helicity spectrum  hv(kperp,kpara)
+! 'odir/mheli2D.XXX.out': magnetic helicity spectrum hv(kperp,kpara)
+! 'odir/gheli2D.XXX.out': generalized helicity spec. g(kperp,kpara)
+!        
+
+! Output files contain [field = vx,vy,...]:
+! 'odir/field_kx': field(kz,ky,kx=0) with size (nz,ny)
+! 'odir/field_ky': field(kz,ky=0,kx) with size (nz,nx/2+1)
+! 'odir/field_kz': field(kz=0,ky,kx) with size (ny,nx/2+1)
+!   [Wavenumbers are k_i=(0,1,...)/L_i (i=x,y,z)]
+!
+
+
+From subroutines in pseudospec3D_prot.f90 (see file for more details):
+! Output files contain:
+! 'sspecpara.XXX.txt' : kz, V(kz) (power spectrum of the scalar)
+! 'sNspecpara.XXX.txt': kz, V(kz) (same for the N-th scalar)
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'sspecperp.XXX.txt' : kp, V(kp), v(kp,kz=0)
+! 'sNspecperp.XXX.txt': kp, V(kp), v(kp,kz=0) (for the N-th scalar)
+!
+   
+! Output files contain:
+! 'stranpara.XXX.txt' : kz, Ts(kz) (scalar transfer function)
+! 'sNtranpara.XXX.txt': kz, Ts(kz) (same for the N-th scalar)
+!
+
+! Output files contain [kp = Dkk*sqrt(kx**2+ky**2)]:
+! 'stranperp.XXX.txt' : kp, Ts(kp) (scalar transfer function)
+! 'sNtranperp.XXX.txt': kp, Ts(kp) (same for the N-th scalar)
+!
+
+! Output files contain:
+! 'odir/sspec2D.XXX.out' : 2D spectrum v(kperp,kpara)
+! 'odir/sNspec2D.XXX.out': Same for the N-th scalar
+!
+
+
+From subroutines in pseudospec3D_bouss.f90 (see file for more details):
+! Output files contain:
+! 'tboussavg.txt': time, vol. average of quantities described below
+! 'tboussmax.txt': time, max. val. of quantities described below
+! 'tboussmin.txt': time, min. val. of quantities described below
+!    col== 2 : hor. avg. of shear == <du_perp/dz>^2
+!    col== 3 : hor. avg. of vert. temp. gradient == <d\theta/dz>
+!    col== 4 : hor. avg. of correlation == <u_z d\theta/dz>
+!    col== 5 : hor. avg. of hor. kinetic energy == <u^2 + v^2>
+!    col== 6 : hor. avg. of vert. kinetic energy == <w^2>
+!    col== 7 : hor. avg. of perp. helicity == <u_perp.(curl u)_perp>_perp
+!    col== 8 : hor. avg. of correlation: <\omega_z \theta>
+!    col== 9 : hor. avg. of PV^2 (see 'havgcomp')
+!    col== 10: hor. avg. of 'super-helicity': <\omega . curl \omega>_perp
+!    col== 11: hor. avg. of gradient Richardson no. (see 'havgcomp')
+!    col== 12: hor. avg. of correlation: <u_z \theta>
+!        
+
+
