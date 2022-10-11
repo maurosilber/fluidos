@@ -11,11 +11,20 @@ def write_parameters(param_dir: Path, parameters: str):
     param_dir.mkdir(exist_ok=True)
     file = param_dir / "parameter.inp"
 
-    if not read_parameters(file) == parameters:
+    # Write parameters to param_dir if they:
+    # - do not exist
+    # - are different from current parameters
+    try:
+        assert read_parameters(file) == parameters
+    except (AssertionError, FileNotFoundError):
         with open(file, "w") as f:
             f.write(parameters)
-
-    os.link(solver_path, param_dir / "SOLVER")
+    
+    # Hard-link solver to param_dir
+    try:
+        os.link(solver_path, param_dir / "SOLVER")
+    except FileExistsError:
+        pass
 
 
 if __name__ == "__main__":
