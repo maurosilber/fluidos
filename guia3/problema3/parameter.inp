@@ -5,7 +5,7 @@ odir = "."
 stat = 0         ! last binary file if restarting an old run
 mult = 1         ! decreases the time step
 bench = 0        ! benchmark mode if 1
-outs = 0         ! controls the amount of output
+outs = 1         ! controls the amount of output
 mean = 0         ! computes mean fields if 1
 trans = 1        ! computes energy transfer if 1
 /
