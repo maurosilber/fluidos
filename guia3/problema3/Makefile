@@ -1,4 +1,9 @@
-all: output/*
+all: parameters run
+
+parameters:
+	python parameters.py
+
+run: output/*
 	for d in $^; do $(MAKE) $$d/vx.0001.out; done;
 
 clean/%:
