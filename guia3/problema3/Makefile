@@ -1,3 +1,4 @@
+.PHONY: all
 all: parameters run
 
 SOLVER: src/*
@@ -6,12 +7,15 @@ SOLVER: src/*
 	mv ../../GHOST/3D/bin/README_output.txt .
 	mv ../../GHOST/3D/bin/BOUSS SOLVER
 
+.PHONY: parameters
 parameters: parameter.inp SOLVER
 	python parameters.py
 
+.PHONY: run
 run: output/*
 	for d in $^; do $(MAKE) $$d/vx.0001.out; done;
 
+.PHONY: clean
 clean/%:
 	cd $* && rm *.txt *.out || true
 
