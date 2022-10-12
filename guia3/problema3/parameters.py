@@ -24,14 +24,14 @@ def write_parameters(param_dir: Path, parameters: str):
     
     # Hard-link solver to param_dir
     try:
-        os.link(solver_path, param_dir / "SOLVER")
+        os.link("SOLVER", param_dir / "SOLVER")
     except FileExistsError:
+        # TODO: que pasa si recompilo SOLVER?
         pass
 
 
 if __name__ == "__main__":
     output_dir = Path("output")
-    solver_path = Path("BOUSS")
     template = read_parameters("parameter.inp")
 
     def problema3(name, *, u1, N, gamma):
