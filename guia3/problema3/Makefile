@@ -1,5 +1,7 @@
+OUTPUT := $(wildcard output/*)
+
 .PHONY: all
-all: parameters run
+all: parameters $(OUTPUT)
 
 SOLVER: src/*
 	cp -r src/ ../../GHOST/3D
@@ -11,11 +13,10 @@ SOLVER: src/*
 parameters: parameter.inp parameters.py
 	python parameters.py
 
-.PHONY: run
-run: output/*
-	for d in $^; do $(MAKE) $$d/vx.0001.out; done;
+.PHONY: $(OUTPUT)
+$(OUTPUT):
+	$(MAKE) $@/vx.0001.out
 
-.PHONY: clean
 clean/%:
 	cd $* && rm *.txt *.out
 
