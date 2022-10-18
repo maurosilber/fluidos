@@ -8,7 +8,7 @@ SOLVER: src/*
 	mv ../../GHOST/3D/bin/BOUSS SOLVER
 
 .PHONY: parameters
-parameters: parameter.inp SOLVER
+parameters: parameter.inp parameters.py
 	python parameters.py
 
 .PHONY: run
@@ -17,8 +17,10 @@ run: output/*
 
 .PHONY: clean
 clean/%:
-	cd $* && rm *.txt *.out || true
+	cd $* && rm *.txt *.out
 
-output/%/vx.0001.out: output/%/parameter.inp output/%/SOLVER
-	$(MAKE) clean/output/$*
+output/%/vx.0001.out: output/%/parameter.inp
+	-$(MAKE) clean/output/$*
+	-rm output/$*/SOLVER
+	ln SOLVER output/$*/SOLVER
 	cd output/$* && time ./SOLVER > /dev/null

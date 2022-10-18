@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 from pathlib import Path
 
 
@@ -21,13 +20,6 @@ def write_parameters(param_dir: Path, parameters: str):
     except (AssertionError, FileNotFoundError):
         with open(file, "w") as f:
             f.write(parameters)
-    
-    # Hard-link solver to param_dir
-    try:
-        os.link("SOLVER", param_dir / "SOLVER")
-    except FileExistsError:
-        # TODO: que pasa si recompilo SOLVER?
-        pass
 
 
 if __name__ == "__main__":
