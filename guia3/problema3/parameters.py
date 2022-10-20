@@ -41,3 +41,5 @@ if __name__ == "__main__":
 
     for gamma in range(5, 21, 5):
         problema3(f"gamma{gamma}", u1=0.1, N=2, gamma=gamma)
+
+    problema3(f"random0", u1=0, N=2, gamma=10)
