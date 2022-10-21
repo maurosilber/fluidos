@@ -1,20 +1,22 @@
 ROOT := ../..
 CONDA_BIN := mamba
+CONDA_ENV := $(ROOT)/conda
 OUTPUT := $(wildcard output/*)
 
 .PHONY: all
 all: parameters $(OUTPUT)
 
 .PHONY: install
-install: $(ROOT)/conda/
+install: $(CONDA_ENV)
 
-$(ROOT)/conda/: $(ROOT)/environment.yaml
-	if [! -d $(ROOT)/conda]; \
+$(CONDA_ENV): $(ROOT)/environment.yaml
+	if [! -d $(CONDA_ENV)]; \
 	then \
-		$(CONDA_BIN) env create --prefix $(ROOT)/conda --file $(ROOT)/environment.yaml; \
+		$(CONDA_BIN) env create --prefix $(CONDA_ENV) --file $(ROOT)/environment.yaml; \
 	else \
-		$(CONDA_BIN) env update  --prefix $(ROOT)/conda --file $(ROOT)/environment.yaml; \
-	fi 
+		$(CONDA_BIN) env update --prefix $(CONDA_ENV) --file $(ROOT)/environment.yaml; \
+	fi
+	touch $(CONDA_ENV)
 
 SOLVER: src/*
 	cp -r src/ $(ROOT)/GHOST/3D
