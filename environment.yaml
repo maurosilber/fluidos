@@ -2,6 +2,6 @@ name: fluidos
 channels:
   - conda-forge
 dependencies:
-  - fortran-compiler
+  - gfortran
   - fftw
   - openmpi

@@ -1,13 +1,27 @@
+ROOT := ../..
+CONDA_BIN := mamba
 OUTPUT := $(wildcard output/*)
 
 .PHONY: all
 all: parameters $(OUTPUT)
 
+.PHONY: install
+install: $(ROOT)/conda/
+
+$(ROOT)/conda/: $(ROOT)/environment.yaml
+	if [! -d $(ROOT)/conda]; \
+	then \
+		$(CONDA_BIN) env create --prefix $(ROOT)/conda --file $(ROOT)/environment.yaml; \
+	else \
+		$(CONDA_BIN) env update  --prefix $(ROOT)/conda --file $(ROOT)/environment.yaml; \
+	fi 
+
 SOLVER: src/*
-	cp -r src/ ../../GHOST/3D
-	cd ../../GHOST/3D/src && make
-	mv ../../GHOST/3D/bin/README_output.txt .
-	mv ../../GHOST/3D/bin/BOUSS SOLVER
+	cp -r src/ $(ROOT)/GHOST/3D
+	cd $(ROOT)/GHOST/3D/src && make
+	mv $(ROOT)/GHOST/3D/bin/README_output.txt .
+	mv $(ROOT)/GHOST/3D/bin/BOUSS SOLVER
+	cd $(ROOT)/GHOST/3D/src && make clean
 
 .PHONY: parameters
 parameters: parameter.inp parameters.py

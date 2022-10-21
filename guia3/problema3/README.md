@@ -7,6 +7,13 @@ genera los parámetros a partir de `parameters.py`,
 y corre todas las simulaciones,
 que quedan guardadas en `output/<variante>/`.
 
+## Instalando dependencias
+
+Para instalar las dependencias para GHOST,
+`make install`
+crea un *conda environment* a partir del `environment.yaml`
+que está en el *root* del repositorio.
+
 ## Compilando el solver
 
 Para compilar el solver,
