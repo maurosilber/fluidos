@@ -5,3 +5,11 @@ dependencies:
   - gfortran
   - fftw
   - openmpi
+  - ipykernel
+  - dask
+  - matplotlib
+  - xarray
+  - sympy
+  - pip
+  - pip:
+    - ghost-xarray
