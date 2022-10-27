@@ -10,6 +10,7 @@ dependencies:
   - matplotlib
   - xarray
   - sympy
+  - scipy
   - pip
   - pip:
     - ghost-xarray
