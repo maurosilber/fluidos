@@ -1,0 +1,7 @@
+name: conda
+channels:
+  - conda-forge
+dependencies:
+  - gfortran
+  - fftw
+  - openmpi
