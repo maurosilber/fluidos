@@ -1,17 +1,17 @@
 ROOT := ../..
-CONDA_BIN := mamba
+CONDA_BIN := micromamba
 CONDA_ENV := $(ROOT)/conda
 SOLVER := HD
 
 .PHONY: install
 install: $(CONDA_ENV)
 
-$(CONDA_ENV): $(ROOT)/environment.yaml
-	if [! -d $(CONDA_ENV)]; \
+$(CONDA_ENV): $(ROOT)/environment.GHOST.yaml
+	if [ ! -d $(CONDA_ENV) ]; \
 	then \
-		$(CONDA_BIN) env create --prefix $(CONDA_ENV) --file $(ROOT)/environment.yaml; \
+		$(CONDA_BIN) create --prefix $(CONDA_ENV) --file $(ROOT)/environment.GHOST.yaml; \
 	else \
-		$(CONDA_BIN) env update --prefix $(CONDA_ENV) --file $(ROOT)/environment.yaml; \
+		$(CONDA_BIN) update --prefix $(CONDA_ENV) --file $(ROOT)/environment.GHOST.yaml; \
 	fi
 	touch $(CONDA_ENV)
 
