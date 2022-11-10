@@ -8,6 +8,8 @@ dependencies:
   - xarray
   - sympy
   - scipy
+  - ipywidgets
+  - numba
   - pip
   - pip:
-    - ghost-xarray
+    - ghost-xarray  
