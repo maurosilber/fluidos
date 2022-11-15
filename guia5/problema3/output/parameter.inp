@@ -12,10 +12,10 @@ trans = 1        ! computes energy transfer if 1
 
 ! Parameters for time integration
 &parameter
-dt = 5.0e-3      ! time step
-step = 4001     ! total number of steps
-tstep = 280      ! number of steps between binary output
-sstep = 140      ! number of steps between spectrum output
+dt = 4.0e-3      ! time step
+step = 5001     ! total number of steps
+tstep = 375      ! number of steps between binary output
+sstep = 125      ! number of steps between spectrum output
 cstep = 10       ! number of steps between writing global quantities
 rand = 1         ! random phases if 1
 cort = 7.5e-4    ! correlation time of the external forcing
@@ -34,7 +34,7 @@ Lz = 1.00        ! Length of the box in z
 f0 = 0.37714265  ! amplitude of the mechanical forcing
 u0 = 1.00        ! amplitude of the initial velocity field
 kdn = 1.00       ! minimum wavenumber
-kup = 1.00       ! maximum wavenumber
+kup = 10.00       ! maximum wavenumber
 nu = 3.5e-3      ! kinematic viscosity
 fparam0 = 0.90   ! fparam0-9 can be used to control the forcing
 /
@@ -45,7 +45,7 @@ m0 = 0.00        ! amplitude of the electromotive forcing
 a0 = 1.00        ! amplitude of the magnetic field
 mkdn = 10.00     ! minimum wavenumber
 mkup = 20.00     ! maximum wavenumber
-mu = 2.e-3       ! magnetic diffusivity
+mu = 3.5e-3       ! magnetic diffusivity
 corr = 0         ! correlation between the fields/forcings
 mparam0 = 0.90   ! mparam0-9 can be used to control the forcing
 aparam0 = 0.10   ! idem for the initial magnetic field
@@ -84,7 +84,7 @@ dyna = 0         ! dynamo run if 1
 &uniformb
 bx0 = 0.00       ! uniform magnetic field in x
 by0 = 0.00       ! uniform magnetic field in y
-bz0 = 1.00       ! uniform magnetic field in z
+bz0 = 2.00       ! uniform magnetic field in z
 /
 
 ! Parameters for runs with the Hall term (HMHD, HMHDB solvers)

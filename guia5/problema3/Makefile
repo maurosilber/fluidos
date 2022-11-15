@@ -1,7 +1,7 @@
 ROOT := ../..
 CONDA_BIN := micromamba
 CONDA_ENV := $(ROOT)/conda
-SOLVER := HD
+SOLVER := MHDB
 
 .PHONY: install
 install: $(CONDA_ENV)
